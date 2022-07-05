@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Data from '../views/Data.vue'
+import WorkerBee from '../views/WorkerBee.vue'
 import Portfolio from '../views/Portfolio.vue'
 
 const routerHistory = createWebHistory()
 const routes = [
   { path: '/', component: Portfolio },
   { path: '/portfolio', component: Portfolio },
-  { path: '/data', component: Data }
+  { path: '/workerBee', component: WorkerBee }
 ]
 
 const router = createRouter({
