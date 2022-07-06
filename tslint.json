@@ -1,0 +1,66 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended",
+		"tslint-clean-code"
+	],
+	"jsRules": {},
+	"rules": {
+		"indent": [
+			true,
+			"tabs",
+			2
+		],
+		"no-constant-condition": true,
+		"max-line-length": false,
+		"no-console": false,
+		"ordered-imports": false,
+		"object-literal-sort-keys": false,
+		"member-ordering": false,
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-leading-underscore",
+			"allow-pascal-case"
+		],
+		"max-classes-per-file": false,
+		"no-string-literal": false,
+		"no-unused-expression": false,
+		"no-bitwise": false,
+		"jsdoc-format": false,
+		"semicolon": [
+			true,
+			"always"
+		],
+		"id-length": true,
+		"try-catch-first": true,
+		"max-func-args": true,
+		"min-class-cohesion": true,
+		"newspaper-order": true,
+		"no-flag-args": true,
+		"no-for-each-push": true,
+		"no-feature-envy": false,
+		"no-map-without-usage": true,
+		"no-complex-conditionals": true,
+		"prefer-dry-conditionals": true,
+		"no-commented-out-code": true,
+		"await-promise": true,
+		"whitespace": [
+			true,
+			"check-branch",
+			"check-decl",
+			"check-operator",
+			"check-module",
+			"check-separator",
+			"check-rest-spread",
+			"check-type",
+			"check-typecast",
+			"check-type-operator",
+			"check-preblock"
+		],
+		"no-floating-promises": true
+	},
+	"rulesDirectory": [
+		"node_modules/tslint-eslint-rules/dist/rules"
+	]
+}

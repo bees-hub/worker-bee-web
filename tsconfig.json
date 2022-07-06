@@ -6,6 +6,7 @@
 		"strictNullChecks": false,
 		"sourceMap": true,
 		"allowJs": true,
+		"jsx": "preserve",
         "noImplicitAny": false,
 		"target": "es2017",
 		"outDir": "./.build",
@@ -24,10 +25,15 @@
 		"rootDir": "./"
 	},
 	"include": [
-		"./src/**/*.ts",
+		"src/**/*.ts", "src/**/*.vue"
 	],
 	"exclude": [
 		"node_modules",
 		"src/**/*.test.*s"
+	],
+	"references": [
+		{
+		  "path": "./tsconfig.config.json"
+		}
 	]
 }

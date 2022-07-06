@@ -64,7 +64,7 @@ export default {
 }
 
 
-function load(mod:any, fullns:any) {
+function load(mod:any, fullns:string) {
     return function init(store:Store<any>) {        
         if (store.hasModule([fullns])) {
             throw new Error('Duplicate module name detected: '+ fullns)
