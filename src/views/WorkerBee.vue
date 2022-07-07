@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="row row-sm-revers">
-      <div class="col-md-6">
-        <Profile/>
+      <div class="col-md-8">
+        <TaskList />
       </div>
-      <div class="col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2">
-        <SpTokenTransfer />
+      <div class="col-md-4">
+        <Profile/>
       </div>
     </div>
   </div>
@@ -14,13 +14,14 @@
 <script>
 import { SpAssets, SpTokenTransfer, SpTokenTransferList } from '@starport/vue';
 import Profile from '../components/profile/Profile.vue'
+import TaskList from '../components/tasks/TaskList.vue'
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
   name: 'Portfolio',
 
-  components: { SpTokenTransfer, SpAssets, SpTokenTransferList, Profile },
+  components: { TaskList, Profile },
 
   setup() {
     // store

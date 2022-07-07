@@ -12,7 +12,8 @@
 		"outDir": "./.build",
 		"moduleResolution": "node",
 		"types": [
-			"node"
+			"node",
+			"naive-ui/volar"
 		],
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,

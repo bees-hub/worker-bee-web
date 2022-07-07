@@ -10,41 +10,41 @@
     @submit="submitItem"
   >
     <template #body>
-        <SpSpacer size="sm" />
-        <div class="row row-sm-revers">
-            <div class="col-md-6">
-                <div v-for="field in itemFieldsFiltered.slice(0, itemFieldsFiltered.length/2)">
-                    <label :for="`p${field.name}`" class="sp-label capitalize-first-letter">
-                    {{ field.name }}
-                    </label>
-                    <input
-                    :id="`p${field.name}`"
-                    v-model="formData[field.name]"
-                    :placeholder="`Enter ${field.name}`"
-                    type="text"
-                    :name="`p${field.name}`"
-                    class="sp-input"
-                    />
-                    <SpSpacer size="xs" />
-                </div>  
-            </div>
-            <div class="col-md-6">
-                <div v-for="field in itemFieldsFiltered.slice(itemFieldsFiltered.length/2, itemFieldsFiltered.length)">
-                    <label :for="`p${field.name}`" class="sp-label capitalize-first-letter">
-                    {{ field.name }}
-                    </label>
-                    <input
-                    :id="`p${field.name}`"
-                    v-model="formData[field.name]"
-                    :placeholder="`Enter ${field.name}`"
-                    type="text"
-                    :name="`p${field.name}`"
-                    class="sp-input"
-                    />
-                    <SpSpacer size="xs" />
-                </div>              
-            </div>
+      <SpSpacer size="sm" />
+      <div class="row row-sm-revers">
+        <div class="col-md-6">
+          <div v-for="field in itemFieldsFiltered.slice(0, itemFieldsFiltered.length/2)">
+            <label :for="`p${field.name}`" class="sp-label capitalize-first-letter">
+            {{ field.name }}
+            </label>
+            <input
+            :id="`p${field.name}`"
+            v-model="formData[field.name]"
+            :placeholder="`Enter ${field.name}`"
+            type="text"
+            :name="`p${field.name}`"
+            class="sp-input"
+            />
+            <SpSpacer size="xs" />
+          </div>  
         </div>
+        <div class="col-md-6">
+          <div v-for="field in itemFieldsFiltered.slice(itemFieldsFiltered.length/2, itemFieldsFiltered.length)">
+            <label :for="`p${field.name}`" class="sp-label capitalize-first-letter">
+            {{ field.name }}
+            </label>
+            <input
+            :id="`p${field.name}`"
+            v-model="formData[field.name]"
+            :placeholder="`Enter ${field.name}`"
+            type="text"
+            :name="`p${field.name}`"
+            class="sp-input"
+            />
+            <SpSpacer size="xs" />
+          </div>              
+        </div>
+      </div>
     </template>
   </SpModal>
 </template>
@@ -95,25 +95,25 @@ export default defineComponent({
 
     // computed
     let itemFields = computed(() =>{
-        let createProfileFields = { fields: [] };
-        let msgCreateProfile: MsgCreateProfile = {
-            creator: '',
-            avatar: '',
-            country: '',
-            province: '',
-            city: '',
-            district: '',
-            contact: '',
-            introduction: '',
-            skills: []
-        };
-        for (const [key, value] of Object.entries(msgCreateProfile)) {
-            let field: any = {}
-            field.name = key
-            field.type = typeof value
-            createProfileFields.fields.push(field)
-        }
-        return createProfileFields.fields;
+      let createProfileFields = { fields: [] };
+      let msgCreateProfile: MsgCreateProfile = {
+        creator: '',
+        avatar: '',
+        country: '',
+        province: '',
+        city: '',
+        district: '',
+        contact: '',
+        introduction: '',
+        skills: []
+      };
+      for (const [key, value] of Object.entries(msgCreateProfile)) {
+        let field: any = {}
+        field.name = key
+        field.type = typeof value
+        createProfileFields.fields.push(field)
+      }
+      return createProfileFields.fields;
     })
 
     let itemFieldsFiltered = computed(() =>
@@ -122,6 +122,7 @@ export default defineComponent({
     let creator = $s.getters['common/wallet/address']
 
     let submitItem = async () => {
+      formData['skills'] = (formData['skills'] as string).split(',');
       $s.dispatch(props.storeName + props.commandName, {
         value: { ...formData, creator }
       })
