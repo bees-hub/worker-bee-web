@@ -98,6 +98,7 @@ export default defineComponent({
       let createProfileFields = { fields: [] };
       let msgCreateProfile: MsgCreateProfile = {
         creator: '',
+        nickName: '',
         avatar: '',
         country: '',
         province: '',

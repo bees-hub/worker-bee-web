@@ -7,6 +7,7 @@ export const protobufPackage = "williamfeng323.workerbee.workerbee";
 
 export interface MsgCreateProfile {
   creator: string;
+  nickName: string;
   avatar: string;
   country: string;
   province: string;
@@ -24,6 +25,7 @@ export interface MsgCreateProfileResponse {
 
 export interface MsgUpdateProfile {
   creator: string;
+  nickName: string;
   avatar: string;
   country: string;
   province: string;

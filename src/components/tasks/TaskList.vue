@@ -39,7 +39,6 @@ export default defineComponent({
     let selectedTask = ref({} as ITask);
     let showModal = ref(false);
     let showDetails = (task: ITask) => {
-      console.log(task);
       selectedTask.value = task;
       showModal.value = true;
     }

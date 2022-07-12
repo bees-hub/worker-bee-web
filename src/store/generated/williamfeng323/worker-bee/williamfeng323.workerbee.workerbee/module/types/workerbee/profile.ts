@@ -6,6 +6,7 @@ export const protobufPackage = "williamfeng323.workerbee.workerbee";
 
 export interface Profile {
   index: string;
+  nickName: string;
   avatar: string;
   serviceArea: ServiceArea | undefined;
   contact: string;
@@ -27,6 +28,7 @@ export interface ServiceArea {
 
 const baseProfile: object = {
   index: "",
+  nickName: "",
   avatar: "",
   contact: "",
   introduction: "",
